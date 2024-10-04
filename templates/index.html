@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Onboarding Chat</title>
+    <title>AI Onboarding Voice Chat</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}">
 </head>
 <body class="bg-gray-100 h-screen">
     <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-bold mb-4">AI Onboarding Chat</h1>
+        <h1 class="text-3xl font-bold mb-4">AI Onboarding Voice Chat</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div class="bg-white p-4 rounded-lg shadow">
                 <h2 class="text-xl font-semibold mb-2">Chat</h2>
                 <div id="chat-messages" class="chat-container overflow-y-auto mb-4 p-2 border border-gray-300 rounded"></div>
-                <form id="chat-form" class="flex">
-                    <input type="text" id="user-input" class="flex-grow border border-gray-300 rounded-l px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Type your message...">
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Send</button>
-                </form>
+                <div id="audio-controls" class="flex items-center justify-between mb-4">
+                    <button id="start-recording" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Start Recording</button>
+                    <button id="stop-recording" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500" disabled>Stop Recording</button>
+                    <canvas id="audio-visualizer" width="200" height="50"></canvas>
+                </div>
             </div>
             <div class="bg-white p-4 rounded-lg shadow">
                 <h2 class="text-xl font-semibold mb-2">Schema Input</h2>
