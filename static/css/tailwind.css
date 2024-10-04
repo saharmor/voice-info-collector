@@ -1,0 +1,19 @@
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+
+/* Custom styles */
+.chat-container {
+    height: calc(100vh - 200px);
+}
+
+.message {
+    max-width: 70%;
+}
+
+.user-message {
+    background-color: #e2e8f0;
+}
+
+.ai-message {
+    background-color: #4299e1;
+    color: white;
+}
